@@ -6,7 +6,7 @@
 /*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:25:35 by wjuneo-f          #+#    #+#             */
-/*   Updated: 2022/06/25 18:56:25 by wjuneo-f         ###   ########.fr       */
+/*   Updated: 2022/06/25 19:00:18 by wjuneo-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ int	main()
 	param = malloc(sizeof(t_param) * 1);
 	param->mlx = mlx_init();
 	param->mlx_win = mlx_new_window(param->mlx, 600, 600, "Cub3D");
+	mlx_key_hook(param->mlx_win, &key_event, param);
 	mlx_loop_hook(param->mlx, &key_event, &param);
 	mlx_loop(param->mlx);
 }
