@@ -6,7 +6,7 @@
 /*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:25:35 by wjuneo-f          #+#    #+#             */
-/*   Updated: 2022/06/25 18:52:43 by wjuneo-f         ###   ########.fr       */
+/*   Updated: 2022/06/25 18:56:25 by wjuneo-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@
 
 int	key_event(int key, t_param *param)
 {
+	printf("%d\n", key);
+
 	if (key == 53)
 	{
 		free(param->mlx_win);
