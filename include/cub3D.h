@@ -6,7 +6,7 @@
 /*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:32:08 by wjuneo-f          #+#    #+#             */
-/*   Updated: 2022/06/25 17:24:41 by wjuneo-f         ###   ########.fr       */
+/*   Updated: 2022/06/25 18:53:22 by wjuneo-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,12 @@
 #include "../libft/libft.h"
 #include "../minilibx/mlx.h"
 
+
+typedef struct s_param
+{
+	void	*mlx;
+	void	*mlx_win;
+	
+}			t_param;
 
 #endif

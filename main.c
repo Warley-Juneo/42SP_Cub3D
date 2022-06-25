@@ -6,7 +6,7 @@
 /*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:25:35 by wjuneo-f          #+#    #+#             */
-/*   Updated: 2022/06/25 18:13:23 by wjuneo-f         ###   ########.fr       */
+/*   Updated: 2022/06/25 18:52:43 by wjuneo-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,23 @@
 
 #include "./include/cub3D.h"
 
+int	key_event(int key, t_param *param)
+{
+	if (key == 53)
+	{
+		free(param->mlx_win);
+		free(param->mlx);
+		exit(0);
+	}
+}
+
 int	main()
 {
-	void	*mlx;
-	void	*mlx_win;
+	t_param	*param;
 
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 600, 600, "Cub3D");
-	mlx_loop(mlx);
+	param = malloc(sizeof(t_param) * 1);
+	param->mlx = mlx_init();
+	param->mlx_win = mlx_new_window(param->mlx, 600, 600, "Cub3D");
+	mlx_loop_hook(param->mlx, &key_event, &param);
+	mlx_loop(param->mlx);
 }
